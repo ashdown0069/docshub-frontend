@@ -1,0 +1,189 @@
+{
+  "LogInPage": {
+    "error": {
+      "failed": "Login failed. Please check your email and password.",
+      "unknown": "An unknown error occurred. Please try again."
+    }
+  },
+  "SignUpPage": {
+    "title": "Sign up",
+    "success": "Sign up completed.",
+    "error": {
+      "unknown": "An unknown error occurred. Please try again.",
+      "email": {
+        "empty": "Please enter your email.",
+        "invalid": "Invalid email.",
+        "duplicate": "Email already exists."
+      },
+      "nickname": {
+        "min": "Nickname must be at least 2 characters long.",
+        "max": "Nickname must be less than 20 characters",
+        "duplicate": "Nickname already exists."
+      },
+      "password": {
+        "min": "Password must be at least 8 characters long.",
+        "max": "Password must be less than 20 characters",
+        "notMatch": "Passwords do not match."
+      }
+    }
+  },
+  "LandingPage": {
+    "Header": {
+      "overview": "Overview",
+      "price": "Price",
+      "feature": "Feature",
+      "contact": "Contact us",
+      "sign-up": "Sign up",
+      "log-in": "Log in"
+    },
+    "Hero": {
+      "main": "Share and manage all your team's documents",
+      "start": "Get start for free"
+    },
+    "Feature": {
+      "file": "Store & Search",
+      "fileDescription": "store documents anytime, anywhere and use powerful search capabilities to quickly find documents",
+      "security": "Security",
+      "securityDescription": "Secure your files by using passwords and record who has viewed and downloaded them to enhance security",
+      "share": "Share & Collaboration",
+      "shareDescription": "You can invite your team member, share files easily, communicate in real time, and leave feedback on documents without complicated processes.",
+      "ai": "AI",
+      "aiDescription": "Use AI to summarize documents. Even complex documents can get to the point quickly."
+    },
+    "Price": {
+      "free": {
+        "price": "$0",
+        "button": "Start for free",
+        "capacity": "Up to 10 users",
+        "workspace": "Create 1 Workspace",
+        "storage": "1 GB of storage",
+        "restore": "Restore deleted files for 30 days"
+      },
+      "team": {
+        "price": "$15",
+        "button": "Subscribe now",
+        "capacity": "Up to 30 users",
+        "workspace": "Create up to 3 Workspace",
+        "storage": "Storage starts from 100GB",
+        "restore": "Restore deleted files for 180 days",
+        "authorization": "Set Workspace administrator",
+        "lock": "File locking feature",
+        "tracking": "Track user downloads"
+      },
+      "enterprise": {
+        "price": "custom",
+        "button": "Contact us",
+        "workspace": "Create Unlimited Workspace",
+        "capacity": "Unlimited users",
+        "storage": "Storage starts from 1TB",
+        "restore": "Restore deleted files for 1 year",
+        "authorization": "Set Workspace administrator",
+        "lock": "File locking feature",
+        "tracking": "Track user downloads",
+        "support": "24/7 customer support"
+      }
+    }
+  },
+  "Button": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "delete": "Delete",
+    "join": "Join",
+    "leave": "Leave"
+  },
+  "Lobby": {
+    "empty": "There are no workspaces you have joined. Create or join a workspace.",
+    "bookmark": "Please add a bookmark.",
+    "search": "Search workspace.",
+    "searchNotFound": "No results found",
+    "searchError": "An error occurred while searching",
+    "createWorkspace": "Create a new workspace",
+    "join": "Joined the workspace.",
+    "create": {
+      "name": "Workspace name",
+      "description": "Workspace description (optional)",
+      "password": "Workspace password (optional)",
+      "confirm": "Confirm password (optional)"
+    },
+    "password": {
+      "title": "Join the Workspace",
+      "empty": "Please enter your password.",
+      "error": "Incorrect password, Please try again.",
+      "placeholder": "Please enter your password."
+    },
+    "withdraw": {
+      "success": "You have successfully quit the workspace.",
+      "iamowner": "Owner cannot withdraw, Please use the admin panel",
+      "alert": {
+        "title": "Withdraw from Workspace",
+        "description": "Are you sure you want to quit this workspace?",
+        "cancel": "Cancel",
+        "confirm": "Quit"
+      }
+    },
+    "error": {
+      "unknown": "An unknown error occurred. Please try again.",
+      "name": {
+        "min": "The workspace name must be at least 3 characters long."
+      },
+      "password": {
+        "empty": "Please enter a password.",
+        "notMatch": "Passwords do not match."
+      }
+    }
+  },
+  "Browser": {
+    "search": "Enter the name of the file.",
+    "searchNotFound": "No results found",
+    "searchError": "An error occurred while searching",
+    "nav": {
+      "selected": "Selected",
+      "rename": "Rename",
+      "delete": "Delete",
+      "transfer": "Transfer"
+    },
+    "sort": {
+      "asc": "Ascending",
+      "desc": "Descending"
+    },
+    "placeholder": {
+      "createNewFolder": "Please enter the folder name.",
+      "rename": "Please enter the new name."
+    },
+    "rename": "Rename",
+    "createNewFolder": "Create new folder",
+    "type": "Type",
+    "duplicate": "Name already exists",
+    "folder": {
+      "loading": "A new folder is being created",
+      "create": "The new folder has been successfully created",
+      "empty": "Folder name cannot be empty",
+      "duplicate": "Folder name already exists",
+      "unknown": "An unknown error occurred"
+    }
+  },
+  "Workspace": {
+    "name": {
+      "min": "The workspace name must be at least 3 characters long.",
+      "duplicate": "The workspace name already exists."
+    },
+    "description": {
+      "min": "The workspace description must be at least 5 characters long.",
+      "max": "The workspace description must be 30 characters or less."
+    },
+    "password": {
+      "empty": "Please enter a password.",
+      "notMatch": "Passwords do not match.",
+      "error": "An error has occurred."
+    },
+    "record": {
+      "description": "You agree to allow download activity to be recorded.",
+      "notAvailable": "This option is not available on the free plan"
+    },
+    "announcement": {
+      "title": "Please enter a title",
+      "description": "Please enter the content"
+    }
+  }
+}

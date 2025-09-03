@@ -1,0 +1,200 @@
+{
+  "LogInPage": {
+    "error": {
+      "failed": "아이디 또는 비밀번호를 잘못 입력했습니다. 다시 시도해주세요.",
+      "unknown": "알 수 없는 오류가 발생했습니다. 다시 시도해주세요",
+      "email": {
+        "empty": "이메일을 입력해주세요.",
+        "invalid": "유효하지 않은 이메일입니다."
+      },
+      "password": {
+        "empty": "비밀번호를 입력해주세요."
+      }
+    }
+  },
+  "SignUpPage": {
+    "title": "회원가입",
+    "success": "회원가입이 완료되었습니다.",
+    "error": {
+      "unknown": "알 수 없는 오류가 발생했습니다. 다시 시도해주세요.",
+      "email": {
+        "empty": "이메일을 입력해주세요.",
+        "invalid": "유효하지 않은 이메일입니다.",
+        "duplicate": "이미 가입된 이메일입니다."
+      },
+      "nickname": {
+        "min": "닉네임은 2자 이상이어야 합니다.",
+        "max": "닉네임은 20자 이하여야 합니다.",
+        "duplicate": "이미 존재하는 닉네임입니다."
+      },
+      "password": {
+        "min": "비밀번호는 8자 이상이어야 합니다.",
+        "max": "비밀번호는 20자 이하여야 합니다.",
+        "notMatch": "비밀번호가 일치하지 않습니다."
+      }
+    }
+  },
+  "LandingPage": {
+    "Header": {
+      "overview": "서비스 소개",
+      "price": "가격",
+      "feature": "주요 기능",
+      "contact": "문의하기",
+      "sign-up": "회원가입",
+      "log-in": "로그인"
+    },
+    "Hero": {
+      "main": "팀의 모든 문서를 공유하고 간편하게 관리하세요",
+      "start": "무료로 시작하기"
+    },
+    "Feature": {
+      "file": "파일 저장과 검색",
+      "fileDescription": "문서를 언제 어디서나 안전하게 보관하고 강력한 검색 기능을 사용하여 빠르게 문서를 찾으세요",
+      "security": "보안",
+      "securityDescription": "비밀번호를 사용하여 안전하게 보호하고 열람한 사람과 다운로드 받은 사람을 기록하여 보안을 강화하세요",
+      "share": "공유와 협업",
+      "shareDescription": "복잡한 과정없이 팀에 초대하거나 간편하게 파일을 공유하며 실시간으로 소통하며 문서에 피드백을 남길 수 있습니다.",
+      "ai": "AI",
+      "aiDescription": "AI을 활용하여 문서를 요약하세요. 복잡한 문서도 빠르게 핵심을 파악할 수 있습니다."
+    },
+    "Price": {
+      "free": {
+        "price": "$0",
+        "button": "무료로 시작하기",
+        "capacity": "최대 10명의 사용자",
+        "workspace": "1개의 워크스페이스 생성",
+        "storage": "1 GB의 저장소",
+        "restore": "30일간 삭제된 파일 복원"
+      },
+      "team": {
+        "price": "$15",
+        "button": "지금 구독하기",
+        "capacity": "최대 30명의 사용자",
+        "workspace": "최대 3개의 채널 생성",
+        "storage": "용량 100GB 부터 시작",
+        "restore": "180일간 삭제된 파일 복원",
+        "authorization": "관리자 설정",
+        "lock": "파일 잠금 기능",
+        "tracking": "다운로드한 유저 기록"
+      },
+      "enterprise": {
+        "price": "custom",
+        "button": "지금 문의하기",
+        "workspace": "무제한 채널 생성",
+        "capacity": "무제한 사용자",
+        "storage": "용량 1TB부터 시작",
+        "restore": "1년간 삭제된 파일 복원",
+        "authorization": "관리자 설정",
+        "lock": "파일 잠금 기능",
+        "tracking": "다운로드한 유저 기록",
+        "support": "24/7 고객센터 운영"
+      }
+    },
+    "PriceBtn": "DocsHub 에 오신걸 환영합니다."
+  },
+  "Button": {
+    "cancel": "취소",
+    "delete": "삭제",
+    "confirm": "확인",
+    "create": "생성",
+    "join": "참여하기",
+    "leave": "나가기"
+  },
+  "Lobby": {
+    "empty": "가입한 워크스페이스가 존재하지 않습니다. 워크스페이스를 생성하거나 참여하세요.",
+    "bookmark": "북마크를 추가해주세요.",
+    "search": "워크스페이스 검색",
+    "searchNotFound": "검색 결과가 없습니다.",
+    "searchError": "검색 중 오류가 발생했습니다.",
+    "createWorkspace": "새 워크스페이스 생성",
+    "join": "워크스페이스에 참여하였습니다.",
+    "create": {
+      "name": "워크스페이스 이름",
+      "description": "워크스페이스 설명 (옵션)",
+      "password": "워크스페이스 비밀번호 (옵션)",
+      "confirm": "워크스페이스 비밀번호 확인 (옵션)"
+    },
+    "password": {
+      "title": "워크스페이스 가입하기",
+      "empty": "비밀번호를 입력해주세요.",
+      "error": "비밀번호가 일치하지 않습니다. 다시 시도해주세요.",
+      "placeholder": "비밀번호를 입력해주세요.",
+      "capacity": "정원이 초과되었습니다."
+    },
+    "withdraw": {
+      "success": "워크스페이스에서 탈퇴하였습니다.",
+      "iamowner": "어드민은 탈퇴할 수 없습니다, 어드민 패널을 이용하세요",
+      "alert": {
+        "title": "워크스페이스 탈퇴",
+        "description": "정말로 워크스페이스를 떠나시겠습니까?",
+        "cancel": "취소",
+        "confirm": "탈퇴"
+      }
+    },
+    "error": {
+      "unknown": "알 수 없는 오류가 발생했습니다. 다시 시도해주세요.",
+      "name": {
+        "min": "워크스페이스 이름은 3자 이상이어야 합니다."
+      },
+      "password": {
+        "empty": "비밀번호를 입력해주세요.",
+        "notMatch": "비밀번호가 일치하지 않습니다."
+      }
+    }
+  },
+  "Browser": {
+    "search": "파일이름을 입력하세요.",
+    "searchNotFound": "검색 결과가 없습니다.",
+    "searchError": "검색 중 오류가 발생했습니다.",
+    "nav": {
+      "selected": "개 선택됨",
+      "rename": "이름 바꾸기",
+      "delete": "삭제",
+      "transfer": "이동"
+    },
+    "sort": {
+      "asc": "오름차순",
+      "desc": "내림차순"
+    },
+    "placeholder": {
+      "createNewFolder": "폴더 이름을 입력해주세요",
+      "rename": "새 이름을 입력해주세요"
+    },
+    "rename": "이름 변경하기",
+    "createNewFolder": "새 폴더 생성",
+    "type": "유형",
+    "duplicate": "이미 존재하는 이름입니다",
+    "folder": {
+      "loading": "새 폴더를 생성하는 중입니다",
+      "create": "폴더가 생성되었습니다.",
+      "empty": "폴더 이름을 입력하세요",
+      "duplicate": "이미 존재하는 폴더 이름입니다",
+      "unknown": "알 수 없는 오류가 발생했습니다. 다시 시도해주세요",
+      "undefined": "알 수 없는 오류가 발생했습니다. 다시 시도해주세요"
+    }
+  },
+  "Workspace": {
+    "name": {
+      "min": "워크스페이스 이름은 3자 이상이어야 합니다.",
+      "duplicate": "이미 존재하는 워크스페이스 이름입니다."
+    },
+    "description": {
+      "min": "워크스페이스 설명은 5자 이상이어야 합니다.",
+      "max": "워크스페이스 설명은 30자 이하여야 합니다."
+    },
+    "password": {
+      "empty": "비밀번호를 입력해주세요.",
+      "notMatch": "비밀번호가 일치하지 않습니다.",
+      "error": "오류가 발생하였습니다."
+    },
+    "record": {
+      "description": "다운로드 내역이 기록되는 것에 동의합니다.",
+      "notAvailable": "이 옵션은 Free 플랜에서 사용할 수 없습니다."
+    },
+    "announcement": {
+      "title": "제목을 입력해주세요",
+      "description": "내용을 입력해주세요: "
+    }
+  },
+  "contextMenu": {}
+}
