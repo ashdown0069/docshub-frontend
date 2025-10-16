@@ -27,7 +27,7 @@ export const LandingNavbar = () => {
                 }}
                 className={cn(
                   navigationMenuTriggerStyle(),
-                  "nav-btn-hover-effect flex items-center bg-transparent pb-1 text-base hover:bg-transparent hover:text-point focus:bg-transparent",
+                  "nav-btn-hover-effect flex items-center bg-transparent pb-1 text-base text-black hover:bg-transparent hover:text-point focus:bg-transparent",
                 )}
               >
                 {t(item.title)}

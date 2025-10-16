@@ -6,10 +6,12 @@ import { Logo } from "./components/Logo";
 import { LanguageSelector } from "./components/LanguageSelector";
 import Link from "next/link";
 import { MobileLandingNavbar } from "./components/landing/MobileLandingNavbar";
+import { useTheme } from "next-themes";
 
 export const LandingHeader = ({ locale }: { locale: "ko" | "en" }) => {
   const t = useTranslations("LandingPage");
-
+  const { setTheme } = useTheme();
+  setTheme("light");
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-between bg-white px-5">
       <div className="ml-1 flex h-full items-center gap-3 md:ml-5">
