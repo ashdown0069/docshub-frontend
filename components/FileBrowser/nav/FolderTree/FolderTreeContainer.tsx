@@ -31,7 +31,7 @@ export default function FolderTreeContainer({
     selectedItems,
     transferOpen,
   );
-  const handleMoveItems = (targetId: string) => {
+  const handleMoveItems = (targetId: string | null) => {
     moveItemsMutation.mutate(
       {
         workspaceId,
@@ -79,13 +79,35 @@ export default function FolderTreeContainer({
         <ScrollArea className="h-72 w-full rounded-md border">
           <h4 className="body-1 p-3">{selectedItems.length}개 선택됨</h4>
           {data.length > 0 &&
-            data.map((folder: any) => (
-              <FolderTreeDialogItem
-                depth={folder.depth}
-                name={folder.name}
-                onClick={() => handleMoveItems(folder._id)}
-              />
-            ))}
+            data.map((folder: any, idx: number) => {
+              if (idx == 0) {
+                return (
+                  <>
+                    <FolderTreeDialogItem
+                      key={idx}
+                      depth={0}
+                      name={"HOME"}
+                      onClick={() => handleMoveItems(null)}
+                    />
+                    <FolderTreeDialogItem
+                      key={folder._id}
+                      depth={folder.depth}
+                      name={folder.name}
+                      onClick={() => handleMoveItems(folder._id)}
+                    />
+                  </>
+                );
+              }
+
+              return (
+                <FolderTreeDialogItem
+                  key={folder._id}
+                  depth={folder.depth}
+                  name={folder.name}
+                  onClick={() => handleMoveItems(folder._id)}
+                />
+              );
+            })}
           {data.length == 0 && (
             <div className="body-1 flex items-center justify-center py-10">
               현재 이동가능한 폴더가 없습니다.
