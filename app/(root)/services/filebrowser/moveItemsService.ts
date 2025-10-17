@@ -9,7 +9,7 @@ export async function moveItems({
 }: {
   workspaceId: string;
   sourceIds: string[];
-  targetId: string;
+  targetId: string | null;
 }) {
   const result = await axiosInstance.patch(
     `${workspaceId}/filebrowser/common`,
@@ -28,7 +28,7 @@ export function useMoveItems() {
       workspaceId: string;
       currentFolderId: string | null;
       sourceIds: string[];
-      targetId: string;
+      targetId: string | null;
       folderName: string[];
     }) => moveItems(params),
     onMutate: ({ folderName }) => {
