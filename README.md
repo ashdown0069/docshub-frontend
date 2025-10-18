@@ -1,6 +1,7 @@
 # DocsHub
 
 > 간편하게 사용할 수 있는 팀 별 문서 저장소
+> [백엔드](https://github.com/ashdown0069/docshub-backend)
 
 ## ✨ 주요 기능
 
