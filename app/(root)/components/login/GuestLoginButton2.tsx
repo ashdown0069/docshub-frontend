@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { CircleUser } from "lucide-react";
 import React from "react";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useLogIn } from "@/app/(root)/services/user/logInUserService";
 export const GuestLoginButton2 = () => {
@@ -24,11 +23,7 @@ export const GuestLoginButton2 = () => {
   };
   return (
     <div className="flex items-center">
-      <Button
-        onClick={handleGuestLogin}
-        className="w-[300px] shadow-md"
-        type="submit"
-      >
+      <Button onClick={handleGuestLogin} className="w-full" type="submit">
         <CircleUser color="#ffffff" />
         <p>Guest2 Log-in for Testing</p>
       </Button>

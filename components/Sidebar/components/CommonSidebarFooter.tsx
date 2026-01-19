@@ -6,8 +6,10 @@ import { CircleHelp } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Plan } from "@/types";
+import { useTranslations } from "next-intl";
 
 export default function CommonSidebarFooter({ plan = "free" }: Plan) {
+  const t = useTranslations("Lobby.sidebar");
   return (
     <SidebarFooter>
       <div className="flex justify-around">
@@ -26,11 +28,7 @@ export default function CommonSidebarFooter({ plan = "free" }: Plan) {
         asChild
         className="flex justify-center rounded-lg bg-brand-300 px-3 py-2 text-xs text-white hover:bg-brand-400"
       >
-        <Link href={"/billing"}>
-          {plan == "enterprise" || plan == "team"
-            ? "Change the Plan"
-            : "Upgrade Now"}
-        </Link>
+        <Link href={"/billing"}>{t("plan")}</Link>
       </Button>
     </SidebarFooter>
   );

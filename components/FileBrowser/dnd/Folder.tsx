@@ -1,9 +1,7 @@
 import React from "react";
 import { FolderContainer } from "./FolderContainer";
 import Image from "next/image";
-import { EllipsisVertical } from "lucide-react";
 import { Label } from "./Label";
-import { ContextMenuContainer } from "../ContextMenu/ContextMenuContainer";
 
 interface FolderProps {
   id: string;

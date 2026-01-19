@@ -24,11 +24,7 @@ export const GuestLoginButton = () => {
   };
   return (
     <div className="flex items-center">
-      <Button
-        onClick={handleGuestLogin}
-        className="w-[300px] shadow-md"
-        type="submit"
-      >
+      <Button onClick={handleGuestLogin} type="submit" className="w-full">
         <CircleUser color="#ffffff" />
         <p>Guest Log-in for Testing</p>
       </Button>

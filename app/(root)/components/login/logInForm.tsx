@@ -26,13 +26,16 @@ export default function LogInForm({
 }: LogInFormProps) {
   return (
     <Form {...form}>
-      <form className="space-y-12" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        className="w-full space-y-12"
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-neutral-800">Email</FormLabel>
               <FormControl>
                 <Input placeholder={"test@test.com"} type="email" {...field} />
               </FormControl>
@@ -45,7 +48,7 @@ export default function LogInForm({
           name="password"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="text-neutral-800">Password</FormLabel>
               <FormControl>
                 <Input type="password" {...field} />
               </FormControl>
@@ -54,7 +57,7 @@ export default function LogInForm({
           )}
         />
         <Button
-          className="w-full bg-brand-400 hover:bg-brand-300"
+          className="w-full bg-brand-300 hover:bg-brand-400"
           disabled={isLoading}
           type="submit"
         >

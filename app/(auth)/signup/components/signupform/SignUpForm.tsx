@@ -1,5 +1,5 @@
 "use client";
-import { ConfirmButton, DestructiveButton } from "@/components/Button/Button";
+import { ConfirmButton } from "@/components/Button/Button";
 import {
   Form,
   FormField,
@@ -25,13 +25,13 @@ export default function SignUpForm({
 }: SignUpFormProps) {
   return (
     <Form {...form}>
-      <form className="space-y-10" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-neutral-800">Email</FormLabel>
               <FormControl>
                 <Input placeholder={"test@test.com"} type="email" {...field} />
               </FormControl>
@@ -44,7 +44,7 @@ export default function SignUpForm({
           name="nickname"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Nickname</FormLabel>
+              <FormLabel className="text-neutral-800">Nickname</FormLabel>
               <FormControl>
                 <Input type="text" {...field} />
               </FormControl>
@@ -57,7 +57,7 @@ export default function SignUpForm({
           name="password"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="text-neutral-800">Password</FormLabel>
               <FormControl>
                 <Input type="password" {...field} />
               </FormControl>
@@ -70,7 +70,9 @@ export default function SignUpForm({
           name="passwordConfirm"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>PasswordConfirm</FormLabel>
+              <FormLabel className="text-neutral-800">
+                Password Confirm
+              </FormLabel>
               <FormControl>
                 <Input type="password" {...field} />
               </FormControl>
@@ -78,12 +80,14 @@ export default function SignUpForm({
             </FormItem>
           )}
         />
-        <ConfirmButton
-          className="w-full"
-          disabled={isLoading}
-          TextType="create"
-          type="submit"
-        />
+        <div className="pt-6">
+          <ConfirmButton
+            className="w-full"
+            disabled={isLoading}
+            TextType="create"
+            type="submit"
+          />
+        </div>
       </form>
     </Form>
   );

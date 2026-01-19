@@ -3,6 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { FileDown, PackageOpen } from "lucide-react";
 import TooltipProvider from "@/components/Provider/TooltipProvider";
 import { useDownloadFile } from "@/app/(root)/services/filebrowser/downloadFileService";
+import { useTranslations } from "next-intl";
 
 export default function RecentUploadList({
   Files,
@@ -11,6 +12,7 @@ export default function RecentUploadList({
   Files: any[];
   workspaceId: string;
 }) {
+  const t = useTranslations("Browser.dashboard");
   const fileDownloadMutation = useDownloadFile();
   const handleFileDownload = (fileId: string) => {
     fileDownloadMutation.mutate({
@@ -23,7 +25,7 @@ export default function RecentUploadList({
       <div className="flex h-72 items-center justify-center rounded-2xl border bg-white dark:bg-dark-100">
         <div className="flex gap-2">
           <PackageOpen size={25} />
-          <p>No recently uploaded files</p>
+          <p>{t("noUpload")}</p>
         </div>
       </div>
     );
@@ -32,7 +34,7 @@ export default function RecentUploadList({
   return (
     <ScrollArea className="h-72 rounded-2xl border-2">
       <div className="p-4">
-        <h4 className="body-2 mb-4">Recent files uploaded</h4>
+        <h4 className="body-2 mb-4">{t("upload")}</h4>
         {Files.map((file) => (
           <div
             key={file._id}

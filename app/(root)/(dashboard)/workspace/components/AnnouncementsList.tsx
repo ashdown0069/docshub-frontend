@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useTranslations } from "next-intl";
 
 interface Announcement {
   _id: string;
@@ -22,12 +23,13 @@ export default function AnnouncementsList({
 }: {
   announcements: Announcement[];
 }) {
+  const t = useTranslations("Browser.dashboard");
   if (announcements.length === 0) {
     return (
       <div className="flex h-72 items-center justify-center rounded-2xl border bg-white">
         <div className="flex gap-2">
           <PackageOpen size={25} />
-          <p>No announcements yet</p>
+          <p>{t("noAnnouncement")}</p>
         </div>
       </div>
     );
@@ -36,7 +38,7 @@ export default function AnnouncementsList({
   return (
     <ScrollArea className="h-72 rounded-2xl border-2">
       <div className="p-4">
-        <h4 className="body-2 mb-4">Recent Announcements</h4>
+        <h4 className="body-2 mb-4">{t("announcement")}</h4>
         {announcements.map((announcement) => (
           <Dialog key={announcement._id}>
             <DialogTrigger asChild>

@@ -9,6 +9,8 @@ import { useCreateUser } from "@/app/(root)/services/user/createUserService";
 import type { customAxiosError } from "@/lib/axios";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Link from "next/link";
+
 export default function SignupContainer() {
   const router = useRouter();
   const signUpSchema = useSignUpSchema();
@@ -55,12 +57,28 @@ export default function SignupContainer() {
   };
   return (
     <>
-      <h2 className="h2 p-5 text-center">{t("title")}</h2>
+      <div className="py-5 text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+          {t("title")}
+        </h2>
+        <p className="mt-3 text-slate-500">{t("desc")}</p>
+      </div>
       <SignUpForm
         form={form}
         isLoading={createUserMutation.isPending}
         onSubmit={handleCreateUser}
       />
+      <div className="pt-6 text-center text-sm text-slate-500">
+        <p>
+          {t("account")}{" "}
+          <Link
+            href="/login"
+            className="font-medium text-brand-400 underline-offset-4 transition-all hover:text-brand-400 hover:underline"
+          >
+            {t("logIn")}
+          </Link>
+        </p>
+      </div>
     </>
   );
 }

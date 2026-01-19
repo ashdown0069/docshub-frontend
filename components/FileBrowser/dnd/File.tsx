@@ -1,6 +1,5 @@
 import React from "react";
-import { File as FileIcon, FileText } from "lucide-react";
-import { ContextMenuContainer } from "../ContextMenu/ContextMenuContainer";
+import { File as FileIcon } from "lucide-react";
 import { Label } from "./Label";
 import { FileContainer } from "./FileContainer";
 import Image from "next/image";

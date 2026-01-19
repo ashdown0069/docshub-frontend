@@ -8,7 +8,7 @@ import RecentUploadList from "../components/RecentUploadList";
 import DashboardSkeleton from "../components/DashboardSkeleton";
 import UserList from "../components/UserList";
 import { useGetMembers } from "@/app/(root)/services/workspaceAdmin/getMembersService";
-import AnnouncementsList from "../components/AnnoucementsList";
+import AnnouncementsList from "../components/AnnouncementsList";
 import { useGetAnnouncements } from "@/app/(root)/services/workspace/getAnnouncementsService";
 
 //main dashboard page

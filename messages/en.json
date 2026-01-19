@@ -2,11 +2,21 @@
   "LogInPage": {
     "error": {
       "failed": "Login failed. Please check your email and password.",
-      "unknown": "An unknown error occurred. Please try again."
+      "unknown": "An unknown error occurred. Please try again.",
+      "email": {
+        "empty": "Please enter your email.",
+        "invalid": "Invalid email."
+      },
+      "password": {
+        "empty": "Please enter a password."
+      }
     }
   },
   "SignUpPage": {
     "title": "Sign up",
+    "desc": "Enter your details to create your account.",
+    "account": "Already have an account?",
+    "logIn": "Log in",
     "success": "Sign up completed.",
     "error": {
       "unknown": "An unknown error occurred. Please try again.",
@@ -39,6 +49,26 @@
     "Hero": {
       "main": "Share and manage all your team's documents",
       "start": "Get start for free"
+    },
+    "Intro": {
+      "Create": {
+        "title": "Create Workspace",
+        "desc": "Set up a secure space to manage and share all your important documents."
+      },
+      "Configure": {
+        "title": "Configure Settings",
+        "desc": "Choose the best plan for your needs and manage user roles with ease."
+      },
+      "Share": {
+        "title": "Share",
+        "desc": "Store and share documents seamlessly³ with your team members."
+      }
+    },
+    "LogIn": {
+      "welcome": " Welcome back",
+      "desc": " Enter your details to access your workspace.",
+      "account": "Don't have an account?",
+      "signUp": "Sign up for free"
     },
     "Feature": {
       "file": "Store & Search",
@@ -131,9 +161,20 @@
         "empty": "Please enter a password.",
         "notMatch": "Passwords do not match."
       }
+    },
+    "sidebar": {
+      "plan": "Change the plan"
     }
   },
   "Browser": {
+    "dashboard": {
+      "upload": "Recently uploaded files",
+      "noUpload": "No files yet",
+      "announcement": "Announcements",
+      "noAnnouncement": "No announcements yet",
+      "users": "Workspace User List",
+      "noUsers": "No users yet"
+    },
     "search": "Enter the name of the file.",
     "searchNotFound": "No results found",
     "searchError": "An error occurred while searching",

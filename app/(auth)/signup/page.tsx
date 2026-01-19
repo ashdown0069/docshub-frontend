@@ -1,23 +1,23 @@
-import { Logo } from "@/components/Header/components/Logo";
-import React, { use } from "react";
+import React from "react";
 import SignupContainer from "./components/signupform/SignupContainer";
 import { LanguageSelector } from "@/components/Header/components/LanguageSelector";
 import { getLocale } from "@/i18n/request";
+import { Logo } from "@/components/Header/components/Logo";
 
 export default async function SignUpPage() {
   const locale = await getLocale();
 
   return (
-    <>
-      <header className="flex h-16 items-center justify-between px-5">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-y-auto bg-white p-6 sm:p-12">
+      <div className="absolute left-4 top-4">
         <Logo />
+      </div>
+      <div className="absolute right-4 top-4">
         <LanguageSelector savedLocale={locale} />
-      </header>
-      <main className="container mx-auto my-10 flex flex-col items-center justify-center">
-        <section className="h-full rounded-2xl border px-10 py-5 shadow-xl">
-          <SignupContainer />
-        </section>
-      </main>
-    </>
+      </div>
+      <div className="w-full max-w-md">
+        <SignupContainer />
+      </div>
+    </div>
   );
 }

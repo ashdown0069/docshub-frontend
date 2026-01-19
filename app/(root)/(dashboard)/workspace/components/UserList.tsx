@@ -2,15 +2,18 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AdminMembersData } from "@/types";
 import { PackageOpen } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 export default function UserList({ users }: { users: AdminMembersData[] }) {
+  const t = useTranslations("Browser.dashboard");
+
   if (users.length === 0) {
     return (
       <div className="flex h-72 items-center justify-center rounded-2xl border bg-white">
         <div className="flex gap-2">
           <PackageOpen size={25} />
-          <p>No users yet</p>
+          <p>{t("noUsers")}</p>
         </div>
       </div>
     );
@@ -18,7 +21,7 @@ export default function UserList({ users }: { users: AdminMembersData[] }) {
 
   return (
     <ScrollArea className="h-72 rounded-2xl border-2 p-4">
-      <h4 className="body-2 mb-4 px-2">Workspace User List</h4>
+      <h4 className="body-2 mb-4 px-2">{t("users")}</h4>
       {users.map((user) => (
         <div
           key={user._id}

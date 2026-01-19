@@ -5,7 +5,7 @@ import {
   updateSession,
 } from "@/auth/auth-session";
 import { getLocale } from "@/i18n/request";
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 
 export interface customAxiosError
@@ -33,39 +33,11 @@ export const axiosInstance__GuestUser = axios.create({
 //요청 인터셉터
 axiosInstance.interceptors.request.use(
   async (config) => {
-    // 클라이언트 환경에서만 동작
-    // if (typeof window === "undefined") {
-    //   return config;
-    // }
-
     const tokens = await getToken();
     if (tokens?.accessToken) {
       config.headers.Authorization = `Bearer ${tokens.accessToken}`;
     }
     return config;
-    // const tokens = await getToken();
-
-    // if (!tokens?.accessToken) {
-    //   if (tokens?.refreshToken) {
-    //     try {
-    //       // 리프레시 토큰을 통한 재발급 로직
-    //       const newAccessToken = await regenAccessToken(tokens.refreshToken);
-    //       await updateSession(newAccessToken);
-    //     } catch (error) {
-    //       console.error("Failed to refresh token:", error);
-    //       await deleteSession();
-    //       window.location.href = "/login";
-    //       return Promise.reject(new Error("Failed to refresh token"));
-    //     }
-    //   } else {
-    //     // 토큰이 없으면 로그인 페이지로 리다이렉트
-    //     window.location.href = "/login";
-    //     return Promise.reject(new Error("No access token found"));
-    //   }
-    // } else if (tokens && tokens.accessToken && tokens.refreshToken) {
-    //   config.headers.Authorization = `Bearer ${tokens.accessToken}`;
-    // }
-    // return config;
   },
   (error) => {
     return Promise.reject(error);
@@ -140,7 +112,7 @@ axiosInstance.interceptors.response.use(
     }
 
     // 403 에러 처리
-    if (error.response?.status === 401) {
+    if (error.response?.status === 403) {
       if (typeof window !== "undefined") {
         const locale = await getLocale();
         toast.error(
@@ -152,22 +124,5 @@ axiosInstance.interceptors.response.use(
     return Promise.reject(error);
   },
 );
-
-// // 응답 인터셉터
-// axiosInstance.interceptors.response.use(
-//   (response) => {
-//     return response;
-//   },
-//   async (error: AxiosError) => {
-//     const locale = await getLocale();
-//     // 403 오류 처리
-//     if (error.response?.status === 403) {
-//       toast.error(
-//         `${locale == "ko" ? "권한이 없습니다." : "You don't have permission."}`,
-//       );
-//     }
-//     return Promise.reject(error);
-//   },
-// );
 
 export default axiosInstance;
