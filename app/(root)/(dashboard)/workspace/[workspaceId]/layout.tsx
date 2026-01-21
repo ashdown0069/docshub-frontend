@@ -7,6 +7,9 @@ import JoinWorkspaceContainer from "@/components/Dialog/JoinworkspaceDialog/Join
 import JoinWorkspaceByURLContainer from "../components/JoinWorkspaceByURLContainer";
 import { getWorkspaceRoleService } from "@/app/(root)/services/workspace/getWorkspaceRoleService";
 import { WorkSpaceSidebarContainer } from "@/components/Sidebar/WorkspaceSidebarContainer";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { pick } from "es-toolkit/compat";
 
 const layout = async ({
   children,
@@ -37,9 +40,10 @@ const layout = async ({
     return <JoinWorkspaceByURLContainer workspaceId={params.workspaceId} />;
   }
   const role = await getWorkspaceRoleService(params.workspaceId);
-
+  const messages = await getMessages();
+  const filteredMessages = pick(messages, ["Workspace", "Browser", "Button"]);
   return (
-    <>
+    <NextIntlClientProvider messages={filteredMessages}>
       <WorkSpaceSidebarContainer
         WorkspaceId={params.workspaceId}
         role={role}
@@ -51,7 +55,7 @@ const layout = async ({
           <div className="grow">{children}</div>
         </section>
       </div>
-    </>
+    </NextIntlClientProvider>
   );
 };
 

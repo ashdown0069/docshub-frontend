@@ -79,7 +79,9 @@
       "shareDescription": "You can invite your team member, share files easily, communicate in real time, and leave feedback on documents without complicated processes.",
       "ai": "AI",
       "aiDescription": "Use AI to summarize documents. Even complex documents can get to the point quickly."
-    },
+    }
+  },
+  "PricePage": {
     "Price": {
       "free": {
         "price": "$0",

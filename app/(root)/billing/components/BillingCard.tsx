@@ -21,10 +21,10 @@ export const BillingCard = ({
   handleChangePlan: (plan: "team" | "free" | "enterprise") => void;
   isLoading: boolean;
 }) => {
-  const t = useTranslations("LandingPage");
+  const t = useTranslations("PricePage");
   const messages = useMessages();
   //@ts-ignore
-  const priceMessages = messages.LandingPage["Price"];
+  const priceMessages = messages.PricePage.Price;
   const pricePlanKeys = Object.keys(priceMessages);
 
   return (
