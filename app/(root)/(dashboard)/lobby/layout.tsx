@@ -15,7 +15,7 @@ import { pick } from "es-toolkit/compat";
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   const messages = await getMessages();
-  const filteredMessages = pick(messages, ["Lobby", "Button"]);
+  const filteredMessages = pick(messages, ["Lobby", "Button", "Sidebar"]);
 
   const queryClient = new QueryClient();
 

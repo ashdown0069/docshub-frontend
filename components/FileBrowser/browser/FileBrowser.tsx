@@ -6,6 +6,7 @@ import LoadingDots from "@/components/Loading/LoadingDots";
 import { useFileBrowser } from "@/store/useFileBrowser";
 import { useGetAllBrowserItems } from "@/app/(root)/services/filebrowser/getBrowserItems";
 import RefetchButton from "@/components/Button/RefetchButton";
+import FilePreviewDialog from "../Preview/FilePreviewDialog";
 interface FileBrowserProps {
   workspaceId: string;
   folderId: string | null | "search";
@@ -51,6 +52,7 @@ export default function FileBrowser({
         />
       )}
       {isError && <RefetchButton refetch={refetch} />}
+      <FilePreviewDialog />
     </div>
   );
 }

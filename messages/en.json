@@ -124,6 +124,9 @@
     "join": "Join",
     "leave": "Leave"
   },
+  "Sidebar": {
+    "plan": "Change the plan"
+  },
   "Lobby": {
     "empty": "There are no workspaces you have joined. Create or join a workspace.",
     "bookmark": "Please add a bookmark.",
@@ -163,9 +166,6 @@
         "empty": "Please enter a password.",
         "notMatch": "Passwords do not match."
       }
-    },
-    "sidebar": {
-      "plan": "Change the plan"
     }
   },
   "Browser": {

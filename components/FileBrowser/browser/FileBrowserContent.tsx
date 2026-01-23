@@ -15,12 +15,14 @@ import { useMemo, useState, MouseEvent, useEffect } from "react";
 import { Overlay, OverlayItem } from "../dnd/DragOverlay";
 import { useDndStore } from "@/store/useDndStore";
 import { useRouter } from "next/navigation";
-import { useFileBrowser } from "@/store/useFileBrowser";
+import { useFileBrowser, useFilePreview } from "@/store/useFileBrowser";
 import Selecto from "react-selecto";
 import FileBrowserItem from "./FileBrowserItem";
 import { cn } from "@/lib/utils";
 import { useMoveItems } from "@/app/(root)/services/filebrowser/moveItemsService";
+import { getFileForPreview } from "@/app/(root)/services/filebrowser/previewFileService";
 import { BrowserItemData } from "@/types";
+import { toast } from "sonner";
 interface FileBrowserProps {
   data: BrowserItemData[];
   workspaceId: string;
@@ -44,6 +46,7 @@ const FileBrowserContent = ({
     setSelectedItems,
     clearSelectedItems,
   } = useFileBrowser();
+  const { openPreview } = useFilePreview();
   const [lastClickedIndex, setLastClickedIndex] = useState<number | null>(null);
 
   function onClick(
@@ -78,8 +81,34 @@ const FileBrowserContent = ({
     }
   }
 
-  function onDoubleClick(e: any, item: any, index: number) {
-    if (item.itemType === "File") return;
+  async function onDoubleClick(e: any, item: any, index: number) {
+    if (item.itemType === "File") {
+      // PDF는 새 창으로 열기
+      if (item.fileExtension === "pdf") {
+        try {
+          const toastId = toast.loading("PDF 파일 로딩 중...");
+          const { data } = await getFileForPreview(
+            workspaceId,
+            item._id,
+            item.fileExtension,
+          );
+          const blob = new Blob([data], { type: "application/pdf" });
+          const url = URL.createObjectURL(blob);
+          window.open(url, "_blank");
+          toast.dismiss(toastId);
+        } catch (error) {
+          toast.error("PDF 파일을 열 수 없습니다.");
+        }
+        return;
+      }
+      // 그 외 파일은 프리뷰 다이얼로그
+      openPreview({
+        id: item._id,
+        name: item.name,
+        extension: item.fileExtension,
+      });
+      return;
+    }
     clearSelectedItems();
     router.push(`/workspace/${workspaceId}/browser/${item._id}`);
   }

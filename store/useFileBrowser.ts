@@ -72,3 +72,34 @@ export const useFileBrowserDialog = create<FileBrowserDialogStore>()(
     },
   ),
 );
+
+// 파일 프리뷰 상태 관리
+interface PreviewFile {
+  id: string;
+  name: string;
+  extension: "txt" | "pdf" | "docx" | "pptx" | "xlsx";
+}
+
+interface FilePreviewStore {
+  previewOpen: boolean;
+  previewFile: PreviewFile | null;
+  openPreview: (file: PreviewFile) => void;
+  closePreview: () => void;
+}
+
+export const useFilePreview = create<FilePreviewStore>()(
+  devtools(
+    (set) => ({
+      previewOpen: false,
+      previewFile: null,
+      openPreview: (file: PreviewFile) =>
+        set({ previewOpen: true, previewFile: file }, false, "openPreview"),
+      closePreview: () =>
+        set({ previewOpen: false, previewFile: null }, false, "closePreview"),
+    }),
+    {
+      name: "FilePreview Store",
+      enabled: process.env.NODE_ENV === "development",
+    },
+  ),
+);

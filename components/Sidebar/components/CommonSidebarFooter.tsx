@@ -9,7 +9,7 @@ import { Plan } from "@/types";
 import { useTranslations } from "next-intl";
 
 export default function CommonSidebarFooter({ plan = "free" }: Plan) {
-  const t = useTranslations("Lobby.sidebar");
+  const t = useTranslations("Sidebar");
   return (
     <SidebarFooter>
       <div className="flex justify-around">

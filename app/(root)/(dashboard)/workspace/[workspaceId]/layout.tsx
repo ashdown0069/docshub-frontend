@@ -41,7 +41,7 @@ const layout = async ({
   }
   const role = await getWorkspaceRoleService(params.workspaceId);
   const messages = await getMessages();
-  const filteredMessages = pick(messages, ["Workspace", "Browser", "Button"]);
+  const filteredMessages = pick(messages, ["Workspace", "Browser", "Button", "Sidebar"]);
   return (
     <NextIntlClientProvider messages={filteredMessages}>
       <WorkSpaceSidebarContainer
