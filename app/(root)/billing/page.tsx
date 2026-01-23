@@ -1,7 +1,6 @@
 import { AvatarHeader } from "@/components/Avatar/AvatarHeader";
 import { Logo } from "@/components/Header/components/Logo";
 import React from "react";
-import { LandingPrice } from "../components/LandingPrice";
 import BillingCardContainer from "./components/BillingCardContainer";
 import { LanguageSelector } from "@/components/Header/components/LanguageSelector";
 import { getLocale, getMessages } from "next-intl/server";

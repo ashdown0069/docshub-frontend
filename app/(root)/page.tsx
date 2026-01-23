@@ -1,9 +1,4 @@
-import { LandingHeader } from "@/components/Header/LandingHeader";
 import React from "react";
-import { Hero } from "./components/Hero";
-import { LandingPrice } from "./components/LandingPrice";
-import { LandingFooter } from "./components/LandingFooter";
-import { getLocale } from "@/i18n/request";
 import IntroPanel from "./components/IntroPanel";
 import LogInPanel from "./components/LogInPanel";
 import { getMessages } from "next-intl/server";
